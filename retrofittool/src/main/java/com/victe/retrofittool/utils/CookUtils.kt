@@ -23,9 +23,9 @@ class CookUtils{
 
     fun setCookie(cookie:String){
         for (item in cookie.split(";")){
-            if (item.contains("SIG") || item.contains("JSESSIONID")){
+//            if (item.contains("SIG") || item.contains("JSESSIONID")){
                 cookieArray.add(item);
-            }
+//            }
         }
     }
 }

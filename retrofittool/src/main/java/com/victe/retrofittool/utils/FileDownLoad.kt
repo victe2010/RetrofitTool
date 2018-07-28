@@ -32,7 +32,7 @@ class FileDownLoad {
             var outputStream: OutputStream? = null
             try {
                 val fileReader = ByteArray(4096)
-                val fileSize = body.contentLength()
+//                val fileSize = body.contentLength()
                 var fileSizeDownloaded: Long = 0
                 inputStream = body.byteStream()
                 outputStream = FileOutputStream(futureStudioIconFile)
@@ -41,19 +41,19 @@ class FileDownLoad {
                     if (read == -1) {
                         break
                     }
-                    outputStream!!.write(fileReader, 0, read)
+                    outputStream.write(fileReader, 0, read)
                     fileSizeDownloaded += read.toLong()
                 }
-                outputStream!!.flush()
+                outputStream.flush()
                 return true
             } catch (e: IOException) {
                 return false
             } finally {
                 if (inputStream != null) {
-                    inputStream!!.close()
+                    inputStream.close()
                 }
                 if (outputStream != null) {
-                    outputStream!!.close()
+                    outputStream.close()
                 }
             }
         } catch (e: IOException) {

@@ -20,7 +20,7 @@ class AddCookiesInterceptor() : Interceptor {
         if (!TextUtils.isEmpty(cookie)) {
             builder.addHeader("Cookie", cookie)
         }
-        return chain!!.proceed(builder.build())
+        return chain.proceed(builder.build())
     }
 
 }

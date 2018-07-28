@@ -19,7 +19,7 @@ import com.victe.exercise.http.FileResponseBody
 class SaveCookiesInterceptor() : Interceptor {
     override fun intercept(chain: Interceptor.Chain?): Response {
         val request = chain!!.request()
-        val response = chain!!.proceed(request)
+        val response = chain.proceed(request)
         //set-cookie可能为多个
         if (!response.headers("set-cookie").isEmpty()) {
             val cookies = response.headers("set-cookie")
